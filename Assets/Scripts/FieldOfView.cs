@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class FieldOfView : MonoBehaviour {
 
-
+	[HideInInspector]
+	public List<Transform> visibleTargets = new List<Transform> ();
 	public float viewRadius;
 	[Range(0,360)]
 	public float viewAngle;
@@ -11,7 +13,22 @@ public class FieldOfView : MonoBehaviour {
 	public LayerMask targetMask;
 	public LayerMask obstacleMask;
 
+	void Start(){
+		StartCoroutine ("findTargetWithDelay", 0.2f);
+	}
+
+
+
+	IEnumerator findTargetWithDelay(float delay){
+		while (true) {
+			yield return new WaitForSeconds (delay);
+			FindVisibleTargets ();
+		}
+	}
+
 	void FindVisibleTargets(){
+
+		visibleTargets.Clear ();
 		Collider[] targetsInViewRadius = Physics.OverlapSphere (transform.position, viewRadius, targetMask);
 
 		for(int i = 0; i < targetsInViewRadius.Length; i++){
@@ -21,7 +38,7 @@ public class FieldOfView : MonoBehaviour {
 				float dstToTarget = Vector3.Distance (transform.position, target.position);
 
 				if (!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleMask)) {
-					
+					visibleTargets.Add (target);
 				}
 			}
 		}
