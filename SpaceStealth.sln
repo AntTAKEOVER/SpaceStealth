@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{A9A20E8D-EFC6-F8E4-631F-3529F8DB14A5}") = "SpaceStealth", "Assembly-CSharp.csproj", "{8A2AD584-2E27-0322-6C86-C628EDB1E378}"
+EndProject
+Project("{A9A20E8D-EFC6-F8E4-631F-3529F8DB14A5}") = "SpaceStealth", "Assembly-CSharp-Editor.csproj", "{18BEA883-03F0-6F0B-795F-60B6E255093D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A2AD584-2E27-0322-6C86-C628EDB1E378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A2AD584-2E27-0322-6C86-C628EDB1E378}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A2AD584-2E27-0322-6C86-C628EDB1E378}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A2AD584-2E27-0322-6C86-C628EDB1E378}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18BEA883-03F0-6F0B-795F-60B6E255093D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18BEA883-03F0-6F0B-795F-60B6E255093D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18BEA883-03F0-6F0B-795F-60B6E255093D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18BEA883-03F0-6F0B-795F-60B6E255093D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
