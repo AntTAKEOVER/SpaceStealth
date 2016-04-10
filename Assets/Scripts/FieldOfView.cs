@@ -51,8 +51,9 @@ public class FieldOfView : MonoBehaviour {
 			if (Vector3.Angle (transform.forward, dirToTarget) < viewAngle / 2) {
 				float dstToTarget = Vector3.Distance (transform.position, target.position);
 				if (!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleMask)) {
-					Debug.Log (target.position);
+				//	Debug.Log (target.position);
 					visibleTargets.Add (target);
+					Debug.Log ("Game Over!");
 
 				}
 			}
