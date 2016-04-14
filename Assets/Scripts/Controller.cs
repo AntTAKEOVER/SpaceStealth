@@ -13,6 +13,8 @@ public class Controller : MonoBehaviour {
 	void Update () {
 
 		transform.position += new Vector3 (Input.GetAxisRaw ("Horizontal") * moveSpeed * Time.deltaTime, 0, Input.GetAxisRaw ("Vertical") * moveSpeed * Time.deltaTime);
+
+		
 	
 	}
 }
