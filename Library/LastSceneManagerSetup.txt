@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/fieldOfView.unity
+- path: Assets/Scenes/ArtTestScene.unity
   isLoaded: 1
   isActive: 1

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class FieldOfView : MonoBehaviour {
 
+	Transform targetToShoot;
 	public float viewRadius;
 	[Range(0,360)]
 	public float viewAngle;
@@ -51,13 +52,25 @@ public class FieldOfView : MonoBehaviour {
 			if (Vector3.Angle (transform.forward, dirToTarget) < viewAngle / 2) {
 				float dstToTarget = Vector3.Distance (transform.position, target.position);
 				if (!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleMask)) {
-				//	Debug.Log (target.position);
+					//	Debug.Log (target.position);
 					visibleTargets.Add (target);
 					Debug.Log ("Game Over!");
+					targetToShoot = target;
+					//InvokeRepeating ("Shoot", 0.01f, GetComponent<ShootOnDetection> ().shootFrequency);
+					Shoot();
 
+
+				} else {
+					//CancelInvoke ();
 				}
 			}
 		}
+	}
+
+	void Shoot(){
+		GetComponent<ShootOnDetection> ().Shoot (targetToShoot);
+
+
 	}
 
 	void DrawFieldOfView() {
